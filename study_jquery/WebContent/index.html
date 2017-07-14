@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>BONC东方国信</title>
+<!-- <script type="text/javascript" src="/WEB-INF/js/jquery-3.2.1.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#button1").click(function(){
+    	$(".xing").hide();
+        });
+    $("#button2").click(function(){
+    	$("p.1").toggle();
+    });
+    $("#button3").click(function(){
+    	$("[href='#']").hide();
+        });
+    $("#button4").click(function(){
+        alert($("input.haha").length);
+        });
+    
+    $("#button6").click(function(){
+        $("#append").text("hello world!");
+        });
+    
+    $("#button7").click(function(){
+        $("#append").remove();
+        });
+    
+    $("#button8").click(function(){
+        $("#taobao").attr({
+            "href" : "http://www.w3school.com.cn/jquery/",
+            "title" : "W3School jQuery 教程"
+          });
+        });
+    $("#button9").click(function(){
+        $("#taobao").removeAttr("title");
+        });
+    $("#button10").click(function(){
+        $("#taobao").attr({
+            "title" : "我是新title"
+          });
+        });
+    
+    $("#button11").click(function(){
+        var div=$("div.animate");  
+        div.animate({fontSize:'4em'},"fast");
+        div.animate({left:'500px'},"slow");
+      });
+    
+    $("#flip").click(function(){
+        $("#panel").slideDown(5000);
+      });
+      $("#stop").click(function(){
+        $("#panel").stop();
+      });
+});
+</script>
+
+<script type="text/javascript">
+function testappend(){
+	$("#append").append("第二段文字.");
+}
+/*   var flag = false; //用作标志
+function stoprun(){
+	if(flag==true){
+		$("#panel").stop(); //设置动画状态--暂停
+		flag = false;
+		}else{
+		flag = true;
+		$("#panel").slideDown(5000);
+		} 
+}  */
+
+</script>
+<style type="text/css"> 
+#panel,#flip
+{
+padding:5px;
+text-align:center;
+background-color:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+#panel
+{
+padding:50px;
+display:none;
+}
+</style>
+</head>
+<body>
+    <div>
+    <form id = "form1">
+        <input id="button1" type="button" class="haha" value="隐藏" />
+        <span><input type="text" class="xing" value="点隐藏我会消失"/></span>
+        <input id="button3" type="button" class="haha" value="属性选择器-隐藏" />
+        <a href="#">我是href=#</a>
+        <a href="https://www.baidu.com/">我是百度</a>
+    </form>
+    </div>
+    <br/>
+    <div>
+    <button id="button2">显示/隐藏文字</button>
+    <p class="1">button 控件 与 input type="button" 相比，提供了更为强大的功能和更丰富的内容。</p>
+    <p class="1">在表单中用input type=button，在value中指定值</p>
+    </div>
+    
+    <div>
+    <button id="button4">统计几个input type=button</button>
+    <button>我是button</button>
+    </div>
+    <br/>
+    <br/>
+    <div>
+    <button id="button5" onclick="testappend()">append方法添加标签内容</button>
+    <button id="button6">修改标签内容</button>
+    <button id="button7">删除标签内容</button>
+     <p id="append">我是第一段文字</p>
+    </div>
+    <br/>
+    <br/>
+    <div>
+    <button id="button8">更改标签的属性</button>
+    <button id="button9">删除标签的title属性</button>
+    <button id="button10">先删后增title属性</button>
+    
+    <a href="http://www.taobao.com" id="taobao" title="淘宝！">我是淘宝</a>
+    </div>
+    <br/>
+    <br/>
+    <button id="button11">开始动画</button>
+   <p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+   <div class="animate" style="background:#98bf21;height:100px;width:200px;position:absolute;">
+    HELLO   
+   </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>  
+    <br/>
+    <br/>
+    <button id="stop">启动/暂定</button>
+    <div id="flip">点击这里，向下滑动面板</div>
+    <div id="panel">Hello world!</div>
+    
+</body>
+</html>
